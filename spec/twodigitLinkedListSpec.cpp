@@ -47,7 +47,7 @@ namespace spec
 			struct node *head = NULL;
 			add(&head, 0, 0);
 			num = convert_sll_2digit_to_int(head);
-			Assert::IsTrue(num == 0, L"Failed for input 125634.", LINE_INFO());
+			Assert::IsTrue(num == 0, L"Failed for input 0.", LINE_INFO());
 		}
 		TEST_METHOD(Repeated2digit)
 		{
@@ -57,7 +57,7 @@ namespace spec
 			add(&head, 2,2);
 			add(&head, 3,3);
 			num = convert_sll_2digit_to_int(head);
-			Assert::IsTrue(num == 112233, L"Failed for input 125634.", LINE_INFO());
+			Assert::IsTrue(num == 112233, L"Failed for input 112233.", LINE_INFO());
 		}
 		TEST_METHOD(Leadingzero2digit)
 		{
@@ -67,7 +67,7 @@ namespace spec
 			add(&head, 2, 2);
 			add(&head, 3, 3);
 			num = convert_sll_2digit_to_int(head);
-			Assert::IsTrue(num == 2233, L"Failed for input 125634.", LINE_INFO());
+			Assert::IsTrue(num == 2233, L"Failed for input 002233.", LINE_INFO());
 		}
 	};
 }

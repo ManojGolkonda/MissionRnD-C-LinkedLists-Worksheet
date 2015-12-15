@@ -12,6 +12,7 @@ NOTES:
 */
 
 #include <stdio.h>
+#include<malloc.h>
 
 struct node {
 	int num;
@@ -19,5 +20,24 @@ struct node {
 };
 
 struct node * removeEveryKthNode(struct node *head, int K) {
-	return NULL;
+	if (head == NULL || K < 2)
+		return NULL;
+	struct node *begin = head;
+	int count = 1;
+	while (begin != NULL)
+	{
+		if (!((count + 1) % K))
+		{
+			if (begin->next != NULL)
+			{
+				struct node *temp = begin->next;
+				begin->next = temp->next;
+				free(temp);
+				count++;
+			}
+		}
+		count++;
+		begin = begin->next;
+	}
+	return head;
 }
